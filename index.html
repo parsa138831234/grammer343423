@@ -1,0 +1,440 @@
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>آموزش گرامر نهم - صفحه اصلی</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0; padding: 0;
+    }
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      direction: rtl;
+      padding-bottom: 40px;
+    }
+    header {
+      background: rgba(255 255 255 / 0.15);
+      backdrop-filter: blur(12px);
+      padding: 20px 15px;
+      font-weight: 700;
+      font-size: 1.6rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      color: #fff;
+      letter-spacing: 1.1px;
+    }
+    main {
+      flex-grow: 1;
+      padding: 15px;
+      margin-top: 15px;
+    }
+    .card-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+    @media (max-width: 480px) {
+      .card-container {
+        grid-template-columns: 1fr;
+      }
+    }
+    .card {
+      background: rgba(255 255 255 / 0.15);
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      padding: 25px 20px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      user-select: none;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 30px rgba(0,0,0,0.45);
+    }
+    .card i {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      color: #ffd166;
+      transition: color 0.3s ease;
+    }
+    .card:hover i {
+      color: #ff6f61;
+    }
+    .card span {
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+    .welcome-text {
+      margin-top: 30px;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #e0e0e0;
+      text-align: center;
+      max-width: 450px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .section {
+      display: none;
+      padding: 20px 15px 0 15px;
+      max-width: 700px;
+      margin: auto;
+    }
+    .section.active {
+      display: block;
+      animation: fadeIn 0.5s ease forwards;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 15px;
+      background: #ffd166;
+      color: #222;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s ease;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    .back-btn:hover {
+      background: #ffae42;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0 25px 0;
+      color: #fff;
+    }
+    table, th, td {
+      border: 1px solid #ffd166;
+    }
+    th, td {
+      padding: 8px 12px;
+      text-align: center;
+    }
+    th {
+      background-color: rgba(255 209 102 / 0.3);
+      font-weight: 700;
+    }
+    h2 {
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    h3 {
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+    ul {
+      margin-top: 10px;
+      margin-bottom: 20px;
+      padding-right: 15px;
+      list-style-type: disc;
+    }
+  </style>
+</head>
+<body>
+
+<header>آموزش گرامر زبان انگلیسی پایه نهم</header>
+
+<main>
+ <section id="home" class="section active">
+  <div class="card-container">
+    <div class="card" onclick="showSection('lesson')">
+      <i class="fas fa-book-open"></i>
+      <span>آموزش</span>
+    </div>
+
+    <div class="card" onclick="window.open('quiz.html', '_blank')">
+      <i class="fas fa-pen-fancy"></i>
+      <span>آزمون</span>
+    </div>
+
+    <div class="card" onclick="showSection('contact')">
+      <i class="fas fa-envelope"></i>
+      <span>تماس با ما</span>
+    </div>
+
+    <div class="card" onclick="showSection('about')">
+      <i class="fas fa-info-circle"></i>
+      <span>درباره ما</span>
+    </div>
+  </div>
+     </div>
+    <p class="welcome-text">خوش آمدید به این برنامه ای که برای ساختش زحمت ها کشیده شده است چون که تیم سازنده  یک نفر بود و به همین دلیل روز ها و ساعت ها نشست پشت سیستم تا این برنامه را برای استفاده شما عزیزان طراحی کند و اگر از این برنامه حمایت شود برخی امکانات بروزتر اضافه میشود در نسخه های بعدی از جمله : لغتنامه کل درس ها _ نمونه سوالات _ آموزش تصویری و ویدئویی و هر امکانات دیگری که شما با ما در میان    می گزارید.
+    </p>
+  </section>
+
+  <section id="lesson" class="section">
+    <button class="back-btn" onclick="showSection('home')">&larr; بازگشت به صفحه اصلی</button>
+    <h2>بخش آموزش</h2>
+
+    <!-- تا بخش ۶ اینجاست (مثل قبل) -->
+
+ 
+
+<!-- 1. فعل های to be -->
+<h3>1. فعل‌های to be</h3>
+<p>فعل‌های to be در زمان حال شامل am, is, are هستند و برای بیان وضعیت، ویژگی یا هویت به کار می‌روند.</p>
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; text-align:center; margin-bottom:15px;">
+  <thead>
+    <tr><th>نوع جمله</th><th>ساختار</th><th>مثال</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>جمله مثبت</td><td>فاعل + am/is/are + ...</td><td>I am happy.</td></tr>
+    <tr><td>جمله منفی</td><td>فاعل + am/is/are + not + ...</td><td>He is not here.</td></tr>
+    <tr><td>جمله سوالی</td><td>Am/Is/Are + فاعل + ...؟</td><td>Are you ready?</td></tr>
+  </tbody>
+</table>
+<p><b>نکات مهم:</b>  
+<ul>
+<li>am فقط با فاعل I می‌آید.</li>
+<li>is با he, she, it و اسامی مفرد به کار می‌رود.</li>
+<li>are با you, we, they و اسامی جمع استفاده می‌شود.</li>
+</ul>
+</p>
+
+<!-- 2. مخفف های فعل to be -->
+<h3>2. مخفف‌های فعل to be</h3>
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; text-align:center; margin-bottom:15px;">
+  <thead>
+    <tr><th>شکل کامل</th><th>مخفف</th><th>مثال</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>I am</td><td>I'm</td><td>I'm a teacher.</td></tr>
+    <tr><td>He is</td><td>He's</td><td>He's happy.</td></tr>
+    <tr><td>She is</td><td>She's</td><td>She's here.</td></tr>
+    <tr><td>It is</td><td>It's</td><td>It's cold.</td></tr>
+    <tr><td>We are</td><td>We're</td><td>We're friends.</td></tr>
+    <tr><td>You are</td><td>You're</td><td>You're late.</td></tr>
+    <tr><td>They are</td><td>They're</td><td>They're students.</td></tr>
+  </tbody>
+</table>
+<p><b>نکته:</b> مخفف‌ها در گفتار روزمره بسیار رایج هستند و به روان‌تر شدن صحبت کمک می‌کنند.</p>
+
+<!-- 3. زمان حال استمراری -->
+<h3>3. زمان حال استمراری (Present Continuous)</h3>
+<p>برای بیان کاری که هم‌اکنون در حال انجام است استفاده می‌شود.</p>
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; text-align:center; margin-bottom:15px;">
+  <thead>
+    <tr><th>نوع جمله</th><th>ساختار</th><th>مثال</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>جمله مثبت</td><td>فاعل + am/is/are + فعل + ing</td><td>She is reading a book.</td></tr>
+    <tr><td>جمله منفی</td><td>فاعل + am/is/are + not + فعل + ing</td><td>They are not playing now.</td></tr>
+    <tr><td>جمله سوالی</td><td>Am/Is/Are + فاعل + فعل + ing؟</td><td>Are you working?</td></tr>
+  </tbody>
+</table>
+<p><b>نکات:</b>
+<ul>
+<li>برای ساختن شکل منفی از not بعد از فعل to be استفاده می‌کنیم.</li>
+<li>در سوالی، جای فعل to be و فاعل عوض می‌شود.</li>
+<li>برای افعالی که به y ختم می‌شوند، معمولاً فقط ing اضافه می‌شود (play → playing).</li>
+</ul>
+</p>
+
+<!-- 4. کلمات پرسشی -->
+<h3>4. کلمات پرسشی (Question Words)</h3>
+<p>برای پرسیدن سوالات اطلاعاتی به کار می‌روند.</p>
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; text-align:center; margin-bottom:15px;">
+  <thead>
+    <tr><th>کلمه</th><th>معنی</th><th>جایگاه در جمله</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>What</td><td>چی؟ چه چیزی؟</td><td>اول جمله سوالی</td></tr>
+    <tr><td>Where</td><td>کجا؟</td><td>اول جمله سوالی</td></tr>
+    <tr><td>When</td><td>کی؟</td><td>اول جمله سوالی</td></tr>
+    <tr><td>Who</td><td>کی؟ چه کسی؟</td><td>اول جمله سوالی</td></tr>
+    <tr><td>Why</td><td>چرا؟</td><td>اول جمله سوالی</td></tr>
+    <tr><td>How</td><td>چطور؟</td><td>اول جمله سوالی</td></tr>
+  </tbody>
+</table>
+<p><b>نکته:</b> پس از کلمات پرسشی معمولاً فعل یا فعل کمکی می‌آید.</p>
+
+<!-- 5. مالکیت انسان و غیر انسان -->
+<h3>5. مالکیت انسان و غیر انسان</h3>
+<p>برای نشان دادن مالکیت یا نسبت بین دو چیز به کار می‌رود.</p>
+<p><b>مالکیت انسان (Possessive adjectives):</b></p>
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; text-align:center; margin-bottom:15px;">
+<thead>
+<tr><th>ضمیر فاعلی</th><th>صفت ملکی</th><th>مثال</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>my</td><td>My book</td></tr>
+<tr><td>You</td><td>your</td><td>Your pen</td></tr>
+<tr><td>He</td><td>his</td><td>His car</td></tr>
+<tr><td>She</td><td>her</td><td>Her house</td></tr>
+<tr><td>It</td><td>its</td><td>Its tail</td></tr>
+<tr><td>We</td><td>our</td><td>Our school</td></tr>
+<tr><td>They</td><td>their</td><td>Their toys</td></tr>
+</tbody>
+</table>
+<p><b>مالکیت غیر انسان:</b> معمولاً از 's استفاده می‌کنیم (The dog's bone).</p>
+
+<!-- 6. زمان حال ساده -->
+<h3>6. زمان حال ساده (Present Simple)</h3>
+<p>برای بیان عادت‌ها، حقایق و برنامه‌های ثابت استفاده می‌شود.</p>
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; text-align:center; margin-bottom:15px;">
+<thead>
+<tr><th>نوع جمله</th><th>ساختار</th><th>مثال</th></tr>
+</thead>
+<tbody>
+<tr><td>جمله مثبت</td><td>فاعل + فعل (s/es برای سوم شخص مفرد)</td><td>She walks to school.</td></tr>
+<tr><td>جمله منفی</td><td>فاعل + do/does + not + فعل ساده</td><td>He does not like coffee.</td></tr>
+<tr><td>جمله سوالی</td><td>Do/Does + فاعل + فعل ساده؟</td><td>Do you play football?</td></tr>
+</tbody>
+</table>
+<p><b>نکات:</b>
+<ul>
+<li>در سوم شخص مفرد (he, she, it) فعل به s یا es ختم می‌شود.</li>
+<li>برای جملات منفی و سوالی از do/does استفاده می‌کنیم.</li>
+</ul>
+</p>
+
+<!-- 7. ضمیرهای فاعلی و صفات ملکی -->
+<h3>7. ضمیرهای فاعلی و صفات ملکی</h3>
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; text-align:center; margin-bottom:15px;">
+<thead>
+<tr><th>ضمیر فاعلی</th><th>صفت ملکی</th></tr>
+</thead>
+<tbody>
+<tr><td>I</td><td>my</td></tr>
+<tr><td>You</td><td>your</td></tr>
+<tr><td>He</td><td>his</td></tr>
+<tr><td>She</td><td>her</td></tr>
+<tr><td>It</td><td>its</td></tr>
+<tr><td>We</td><td>our</td></tr>
+<tr><td>They</td><td>their</td></tr>
+</tbody>
+</table>
+<p><b>نکته:</b> صفات ملکی قبل از اسم می‌آیند و مالکیت را نشان می‌دهند.</p>
+
+<!-- 8. قیدهای تکرار -->
+<h3>8. قیدهای تکرار (Adverbs of Frequency)</h3>
+<p>این قیدها نشان می‌دهند که عملی چند وقت یکبار انجام می‌شود.</p>
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; text-align:center; margin-bottom:15px;">
+<thead>
+<tr><th>قید تکرار</th><th>ترجمه</th><th>مثال</th></tr>
+</thead>
+<tbody>
+<tr><td>Always</td><td>همیشه</td><td>She always studies.</td></tr>
+<tr><td>Usually</td><td>معمولاً</td><td>We usually go to school.</td></tr>
+<tr><td>Sometimes</td><td>گاهی اوقات</td><td>He sometimes plays football.</td></tr>
+<tr><td>Never</td><td>هرگز</td><td>They never smoke.</td></tr>
+</tbody>
+</table>
+<p><b>نکته:</b> قیدهای تکرار معمولاً قبل از فعل اصلی یا بعد از فعل to be می‌آیند.</p>
+
+<!-- 9. گذشته ساده با قاعده -->
+<h3>9. گذشته ساده با قاعده (Regular Past Simple)</h3>
+<p>برای بیان کاری که در گذشته انجام شده است و قانونمند است.</p>
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; text-align:center; margin-bottom:15px;">
+<thead>
+<tr><th>نوع جمله</th><th>ساختار</th><th>مثال</th></tr>
+</thead>
+<tbody>
+<tr><td>جمله مثبت</td><td>فاعل + فعل + ed</td><td>He worked yesterday.</td></tr>
+<tr><td>جمله منفی</td><td>فاعل + did + not + فعل ساده</td><td>She did not play.</td></tr>
+<tr><td>جمله سوالی</td><td>Did + فاعل + فعل ساده؟</td><td>Did you watch TV?</td></tr>
+</tbody>
+</table>
+<p><b>نکات:</b>
+<ul>
+<li>برای جملات منفی و سوالی از did استفاده می‌کنیم و فعل ساده باقی می‌ماند.</li>
+<li>برای ساختن جمله مثبت کافی است ed به فعل اضافه کنیم.</li>
+</ul>
+</p>
+
+<!-- 10. گذشته ساده بی‌قاعده -->
+<h3>10. گذشته ساده بی‌قاعده (Irregular Past Simple)</h3>
+<p>برخی افعال شکل گذشته قاعده‌ای ندارند و باید حفظ شوند.</p>
+<table border="1" cellpadding="8" cellspacing="0" style="width:100%; text-align:center; margin-bottom:15px;">
+<thead>
+<tr><th>فعل ساده</th><th>گذشته ساده</th><th>معنی</th></tr>
+</thead>
+<tbody>
+<tr><td>go</td><td>went</td><td>رفتن</td></tr>
+<tr><td>come</td><td>came</td><td>آمدن</td></tr>
+<tr><td>see</td><td>saw</td><td>دیدن</td></tr>
+<tr><td>take</td><td>took</td><td>گرفتن</td></tr>
+<tr><td>have</td><td>had</td><td>داشتن</td></tr>
+<tr><td>do</td><td>did</td><td>انجام دادن</td></tr>
+<tr><td>say</td><td>said</td><td>گفتن</td></tr>
+<tr><td>make</td><td>made</td><td>ساختن</td></tr>
+<tr><td>write</td><td>wrote</td><td>نوشتن</td></tr>
+<tr><td>eat</td><td>ate</td><td>خوردن</td></tr>
+<tr><td>drink</td><td>drank</td><td>نوشیدن</td></tr>
+<tr><td>run</td><td>ran</td><td>دویدن</td></tr>
+<tr><td>buy</td><td>bought</td><td>خریدن</td></tr>
+<tr><td>think</td><td>thought</td><td>فکر کردن</td></tr>
+<tr><td>sleep</td><td>slept</td><td>خوابیدن</td></tr>
+<tr><td>bring</td><td>brought</td><td>آوردن</td></tr>
+<tr><td>feel</td><td>felt</td><td>احساس کردن</td></tr>
+<tr><td>tell</td><td>told</td><td>گفتن</td></tr>
+<tr><td>meet</td><td>met</td><td>ملاقات کردن</td></tr>
+<tr><td>leave</td><td>left</td><td>ترک کردن</td></tr>
+</tbody>
+</table>
+<p><b>نکته:</b> این افعال باید به صورت جداگانه حفظ شوند چون قاعده خاصی ندارند.</p>
+
+
+  </section>
+
+  <section id="exam" class="section">
+    <button class="back-btn" onclick="showSection('home')">&larr; بازگشت به صفحه اصلی</button>
+    <h2>بخش آزمون</h2>
+<p>
+
+</p>
+  </section>
+
+  <section id="contact" class="section">
+    <button class="back-btn" onclick="showSection('home')">&larr; بازگشت به صفحه اصلی</button>
+    <h2>تماس با ما</h2>
+    <p>از آنجایی که ما به نظر کاربران و دوستانمان احترام می گزاریم اگر نظری انتقادی پیشنهادی چیزی داشتید یا میخواهید بخشی به نسخه های آینده اضاف شود بدون پرده سخن و کلام خودتان را از طریق ایمیل زیر به ما برسانید:                        geramerenglish@gmail.com</p>
+  </section>
+
+  <section id="about" class="section">
+    <button class="back-btn" onclick="showSection('home')">&larr; بازگشت به صفحه اصلی</button>
+    <h2>درباره ما</h2>
+    <p>این برنامه با هدف آموزش گرامر زبان انگلیسی پایه نهم طراحی شده تا مفاهیم ساده درسی را به روشی، قابل فهم و همراه با مثال‌های کاربردی در اختیار دانش‌آموزان قرار دهد.
+
+نکات گرامری هر درس به صورت خلاصه، همراه با تمرین‌ و آزمون و طراحی شده است.
+
+نکته قابل توجه این است که طراحی و توسعه این برنامه توسط پارسا زمان‌زاده، یک دانش‌آموز ۱۵ ساله انجام شده است. او با تکیه بر علاقه، پشتکار و دانش خود، این برنامه را برای کمک به همسن‌وسالانش طراحی کرده است تا یاد گیری گرامر انگلیسی کلاس نهم را آسانتر کند.</p>
+  </section>
+</main>
+
+<script>
+  function showSection(id) {
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(sec => sec.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+</script>
+
+</body>
+</html>
+
